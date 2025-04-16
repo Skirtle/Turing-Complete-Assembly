@@ -1,0 +1,10 @@
+1
+reg0_to_reg2
+
+label LOOP
+reg4_to_reg1
+sub
+reg3_to_out # Check if right
+reg3_to_reg4 # Save output
+LOOP
+true

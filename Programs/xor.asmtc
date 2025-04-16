@@ -1,0 +1,15 @@
+in_to_reg4
+in_to_reg5
+
+# NAND
+reg4_to_reg1
+reg5_to_reg2
+NAND
+reg3_to_reg0
+
+# OR
+OR
+reg3_to_reg1
+reg0_to_reg2
+AND
+reg3_to_out

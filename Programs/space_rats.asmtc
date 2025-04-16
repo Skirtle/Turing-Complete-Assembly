@@ -1,0 +1,43 @@
+const LEFT 0
+const FORWARD 1
+const RIGHT 2
+const SLEEP 3
+const USE 4
+const SHOOT 5
+
+SHOOT
+reg0_to_out
+FORWARD
+reg0_to_out
+reg0_to_out
+reg0_to_out
+reg0_to_out
+reg0_to_out
+SLEEP
+reg0_to_out
+reg0_to_out
+reg0_to_out
+
+label SCAN
+33
+reg0_to_reg2
+in_to_reg1
+sub
+REPEAT
+EQ
+SLEEP
+reg0_to_out
+SCAN
+NEQ
+
+label REPEAT
+SHOOT
+reg0_to_out
+SHOOT
+reg0_to_out
+SHOOT
+reg0_to_out
+SHOOT
+reg0_to_out
+SCAN
+true

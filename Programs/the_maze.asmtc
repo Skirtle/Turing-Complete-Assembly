@@ -1,0 +1,66 @@
+# Robot commands
+const LEFT 0
+const FORWARD 1
+const RIGHT 2
+const WAIT 3
+const USE 4
+const SHOOT 5
+# Tile ID's
+const WALL 1
+const EMPTY 0
+const DOOR 3
+
+# Check left until not wall
+USE
+submit
+label MAIN
+FORWARD
+submit
+# Try to go right
+RIGHT
+submit
+DOOR
+reg0_to_reg1
+in_to_reg1
+USE
+submit
+EMPTY
+reg0_to_reg1
+in_to_reg2
+sub
+MAIN
+EQ
+FORWARD
+submit
+LEFT
+submit
+DOOR
+reg0_to_reg1
+in_to_reg1
+USE
+submit
+EMPTY
+reg0_to_reg1
+in_to_reg2
+sub
+MAIN
+EQ
+FORWARD
+submit
+LEFT
+submit
+DOOR
+reg0_to_reg1
+in_to_reg1
+USE
+submit
+EMPTY
+reg0_to_reg1
+in_to_reg2
+sub
+MAIN
+EQ
+LEFT
+submit
+MAIN
+always

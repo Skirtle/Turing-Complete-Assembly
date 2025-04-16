@@ -1,0 +1,9 @@
+# Given a number input as need to return that number % 4
+# Only 8 ticks to do so
+# Effectively, jsut return the last 2 bits of the input
+
+in_to_reg1
+3
+reg0_to_reg2
+AND
+reg3_to_out
