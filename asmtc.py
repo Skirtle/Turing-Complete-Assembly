@@ -13,7 +13,7 @@ elif ("win" in platform):
 else:
     username = "guest"
 
-prog_name = "mult_by_6"
+prog_name = "multiply"
 input_file = f"./Programs/{prog_name}.asmtc"
 
 keywords = [
@@ -103,7 +103,7 @@ def execute(line, pc) -> int:
         registers[0] = int(line)
         return pc + 1
     else:
-        exit("idk")
+        exit(f"Unknown variable \"{line}\"")
 
 
 # Grab program file and find what we need
@@ -168,3 +168,6 @@ pc = 0
 while (True):
     if (pc >= len(functional_program)): break
     pc = execute(functional_program[pc], pc)
+    # print(registers)
+
+print(registers)

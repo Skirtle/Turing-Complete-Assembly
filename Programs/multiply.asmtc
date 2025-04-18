@@ -1,0 +1,22 @@
+# Get inputs
+in_to_reg4 # Adder
+in_to_reg5 # Subber
+
+label ADDSUB
+reg4_to_reg1
+add
+reg3_to_0
+reg5_to_reg1
+reg0_to_reg5
+1
+reg0_to_reg2
+sub
+DONE
+EQ
+reg5_to_out
+ADDSUB
+always
+
+label DONE
+reg4_to_out
+reg5_to_out
