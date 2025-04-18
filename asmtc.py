@@ -1,8 +1,17 @@
 from sys import platform
 from string import ascii_letters  
 import subprocess
-print(platform)
+
+
 username = subprocess.check_output(["whoami"]).decode().strip()
+if ("linux" in platform):
+    hostname = subprocess.check_output("hostname").decode().strip()
+    username = f"{username}@{hostname}"
+elif ("win" in platform):
+    split_name = username.split("\\")
+    username = f"{split_name[1]}@{split_name[0]}"
+else:
+    username = "guest"
 
 prog_name = "masking_time"
 input_file = f"./Programs/{prog_name}.asmtc"
@@ -78,7 +87,7 @@ def execute(line, pc) -> int:
         from_reg, to_reg = get_registers(line)
         
         # Input and output
-        if (from_reg == 6): registers[6] = int(input(f"{username} $ "))
+        if (from_reg == 6): registers[6] = int(input(f"{username}$ "))
         registers[to_reg] = registers[from_reg]
         if (to_reg == 7): print(registers[7])
         return pc + 1
