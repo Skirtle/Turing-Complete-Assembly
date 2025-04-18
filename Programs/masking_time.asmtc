@@ -3,7 +3,7 @@
 # Effectively, jsut return the last 2 bits of the input
 
 in_to_reg1
-3
+3 # 00000011, the mask
 reg0_to_reg2
 AND
 reg3_to_out

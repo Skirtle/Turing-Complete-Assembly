@@ -1,4 +1,5 @@
-1
+const ONE 1
+ONE
 reg0_to_reg2
 
 label LOOP # Go back to here when done
