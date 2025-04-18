@@ -1,19 +1,19 @@
 from sys import platform
 from string import ascii_letters  
-import subprocess
+from subprocess import check_output
 
 
-username = subprocess.check_output(["whoami"]).decode().strip()
+whoami = check_output(["whoami"]).decode().strip()
 if ("linux" in platform):
-    hostname = subprocess.check_output("hostname").decode().strip()
-    username = f"{username}@{hostname}"
+    hostname = check_output("hostname").decode().strip()
+    username = f"{whoami}@{hostname}"
 elif ("win" in platform):
-    split_name = username.split("\\")
+    split_name = whoami.split("\\")
     username = f"{split_name[1]}@{split_name[0]}"
 else:
     username = "guest"
 
-prog_name = "masking_time"
+prog_name = "mult_by_6"
 input_file = f"./Programs/{prog_name}.asmtc"
 
 keywords = [
